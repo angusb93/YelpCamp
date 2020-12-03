@@ -76,6 +76,10 @@ app.delete('/campgrounds/:id', async(req, res) => {
     res.redirect('/campgrounds')
 })
 
+app.use((err, req, res, next) =>{
+    res.send("this is my error function")
+})
+
 const port = 3000;
 app.listen(port, () => {
     console.log(`Serving on ${port}`);
